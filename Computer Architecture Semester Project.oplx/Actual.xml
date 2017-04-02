@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opns="http://www.omnigroup.com/namespace/OmniPlan/v2" fixed-end="true" id="mslOhKKzR7T">
+  <end-date>2017-04-14T18:00:00.000Z</end-date>
+  <prototype-task>
+    <task id="t-2">
+      <title>Task 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-3">
+      <title>Milestone 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-4">
+      <title>Group 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r-2">
+      <name>Resource 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-3">
+      <name>Equipment 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-4">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-5">
+      <name>Group 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <type>Group</type>
+    <child-resource idref="r1"/>
+  </resource>
+  <resource id="r1">
+    <name>Resource 1</name>
+    <type>Staff</type>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t25"/>
+    <child-task idref="t34"/>
+    <child-task idref="t41"/>
+  </task>
+  <task id="t7">
+    <title>Requirements Analysis Phase Complete</title>
+    <type>milestone</type>
+    <schedule-type>asap</schedule-type>
+    <start-constraint-date>2017-04-04T21:45:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="1" g="0.728788" b="0.301"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t29"/>
+    <start-no-earlier-than>2017-04-04T21:45:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t11">
+    <title>Design Phase Complete</title>
+    <type>milestone</type>
+    <schedule-type>asap</schedule-type>
+    <start-constraint-date>2017-04-06T13:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.440847" g="0.803" b="0.566152"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t32"/>
+    <start-no-earlier-than>2017-04-06T13:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t13">
+    <title>Implementation Phase Complete</title>
+    <type>milestone</type>
+    <schedule-type>asap</schedule-type>
+    <start-constraint-date>2017-04-11T13:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.987" g="0.25662" b="0.287296"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t40"/>
+    <start-no-earlier-than>2017-04-11T13:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t23">
+    <title>Identify Functional Requirements</title>
+    <effort>28800</effort>
+    <end-constraint-date>2017-04-04T22:00:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="1" g="0.728788" b="0.301"/>
+      </value>
+    </style>
+    <end-no-later-than>2017-04-04T22:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t24">
+    <title>Decide on Project Language</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <end-constraint-date>2017-04-04T22:00:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="1" g="0.728788" b="0.301"/>
+      </value>
+    </style>
+    <end-no-later-than>2017-04-04T22:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t25">
+    <title>Requirements Analysis Phase</title>
+    <type>group</type>
+    <end-constraint-date>2017-04-14T17:00:00.000Z</end-constraint-date>
+    <child-task idref="t24"/>
+    <child-task idref="t23"/>
+    <child-task idref="t29"/>
+    <child-task idref="t7"/>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="1" g="0.728788" b="0.301"/>
+      </value>
+    </style>
+    <end-no-later-than>2017-04-14T17:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t29">
+    <title>Identify Platform and Process Requirements</title>
+    <effort>28800</effort>
+    <end-constraint-date>2017-04-05T13:15:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="1" g="0.728788" b="0.301"/>
+      </value>
+    </style>
+    <end-no-later-than>2017-04-05T13:15:00.000Z</end-no-later-than>
+  </task>
+  <task id="t31">
+    <title>Identify Classes</title>
+    <effort>14400</effort>
+    <end-constraint-date>2017-04-05T18:15:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.440847" g="0.803" b="0.566152"/>
+      </value>
+    </style>
+    <end-no-later-than>2017-04-05T18:15:00.000Z</end-no-later-than>
+  </task>
+  <task id="t32">
+    <title>Identify Associations and Attributes</title>
+    <effort>14400</effort>
+    <end-constraint-date>2017-04-05T22:00:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.440847" g="0.803" b="0.566152"/>
+      </value>
+    </style>
+    <end-no-later-than>2017-04-05T22:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t34">
+    <title>Design Phase</title>
+    <type>group</type>
+    <child-task idref="t31"/>
+    <child-task idref="t32"/>
+    <child-task idref="t11"/>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.440847" g="0.803" b="0.566152"/>
+      </value>
+    </style>
+  </task>
+  <task id="t36">
+    <title>Code Random Hex Generator</title>
+    <effort>28800</effort>
+    <end-constraint-date>2017-04-06T22:00:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.987" g="0.25662" b="0.287296"/>
+      </value>
+    </style>
+    <end-no-later-than>2017-04-06T22:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t37">
+    <title>Code Number Conversion Class</title>
+    <effort>57600</effort>
+    <end-constraint-date>2017-04-07T22:00:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.987" g="0.25662" b="0.287296"/>
+      </value>
+    </style>
+    <end-no-later-than>2017-04-07T22:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t39">
+    <title>Code Register Class</title>
+    <effort>57600</effort>
+    <end-constraint-date>2017-04-07T22:00:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.987" g="0.25662" b="0.287296"/>
+      </value>
+    </style>
+    <end-no-later-than>2017-04-07T22:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t40">
+    <title>Code Class to Display Data</title>
+    <effort>28800</effort>
+    <end-constraint-date>2017-04-10T22:00:00.000Z</end-constraint-date>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.987" g="0.25662" b="0.287296"/>
+      </value>
+    </style>
+    <prerequisite-task idref="t39"/>
+    <end-no-later-than>2017-04-10T22:00:00.000Z</end-no-later-than>
+  </task>
+  <task id="t41">
+    <title>Implementation Phase</title>
+    <type>group</type>
+    <child-task idref="t36"/>
+    <child-task idref="t37"/>
+    <child-task idref="t39"/>
+    <child-task idref="t40"/>
+    <child-task idref="t13"/>
+    <style>
+      <value key="gantt-fill-color">
+        <color space="srgb" r="0.987" g="0.25662" b="0.287296"/>
+      </value>
+    </style>
+  </task>
+  <critical-path root="-1" enabled="false" resources="false">
+    <color r="1" g="0.5" b="0.5"/>
+  </critical-path>
+</scenario>
