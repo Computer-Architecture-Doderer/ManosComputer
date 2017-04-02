@@ -62,3 +62,19 @@ class NumConverter:
   @staticmethod
   def hexToInt(a):
     return int(a,16)
+
+# Place program execution inside the main function
+def main():
+  
+  # init a dictionary to hold 4096 memory values
+  memory_dict = {}
+
+  #fills all 4096 values
+  for i in range(1,15):
+    memory_dict[i] = generateHexValue()
+
+  print(memory_dict)
+  
+
+if __name__=='__main__':
+  main()
