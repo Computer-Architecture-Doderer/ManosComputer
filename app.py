@@ -67,6 +67,8 @@ class NumConverter:
 # Class used to hold comp values and perform actions
 class ManosComputer:
     memory_dict = {}
+    # This variable will indicate if it's an indirect call or not (0 or 1)
+    I = 0
 
     def __init__(self, memory):
         self.memory_dict = memory
@@ -90,15 +92,17 @@ class ManosComputer:
         self.regDict["PC"] = str(int(self.regDict["PC"]) + 1)
 
     def getMemory(self):
-        # Change back to AR
-        return self.memory_dict[self.regDict["PC"]]
+        return self.memory_dict[self.regDict["AR"]]
 
     def irGetsMemory(self):
-        self.memory_dict["IR"] = self.getMemory()
+        self.regDict["IR"] = self.getMemory()
+
+    def arGetsIr(self):
+        # the -3: gets the last three letters of the string IR is holding
+        self.regDict["AR"] = self.regDict["IR"][-3:]
 
 
 # Class used to display the values of ManosComputer
-
 class Display:
     manoComp = ManosComputer({"": ""})
 
@@ -114,7 +118,6 @@ class Display:
 # Place program execution inside the main function
 def main():
     memory_dict = {}
-    # init a dictionary to hold 4096 memory values
     startingPCVal = random.randint(0, 4095)
 
     # fills all 4096 values
