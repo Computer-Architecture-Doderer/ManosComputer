@@ -66,37 +66,64 @@ class NumConverter:
 
 # Class used to hold comp values and perform actions
 class ManosComputer:
-    regDict = {"AR": "",
-               "PC": "",
-               "DR": "",
-               "AC": "",
-               "IR": "",
-               "TR": "",
-               "E": "",
-               "M": ""
+    memory_dict = {}
+
+    def __init__(self, memory):
+        self.memory_dict = memory
+
+    sigDict = {"s1": "0", "s2": "0", "s3": "0"}
+
+    regDict = {"AR": "455",
+               "PC": "200",
+               "DR": "00c7",
+               "AC": "0001",
+               "IR": "1200",
+               "TR": "0000",
+               "E": "0",
+               "M": "0400"
                }
+
+    def arGetsPc(self):
+        self.regDict["AR"] = self.regDict["PC"]
+
+    def incrementPC(self):
+        self.regDict["PC"] = str(int(self.regDict["PC"]) + 1)
+
+    def getMemory(self):
+        # Change back to AR
+        return self.memory_dict[self.regDict["PC"]]
+
+    def irGetsMemory(self):
+        self.memory_dict["IR"] = self.getMemory()
 
 
 # Class used to display the values of ManosComputer
+
 class Display:
-    manoComp = ManosComputer()
+    manoComp = ManosComputer({"": ""})
 
     def __init__(self, manosComputer):
         self.manoComp = manosComputer
 
+    def displayRegisters(self):
+        print("\n")
+        for key in self.manoComp.regDict.keys():
+            print(key + " : " + self.manoComp.regDict[key])
+
 
 # Place program execution inside the main function
 def main():
-  
-  # init a dictionary to hold 4096 memory values
-  memory_dict = {}
+    memory_dict = {}
+    # init a dictionary to hold 4096 memory values
+    startingPCVal = random.randint(0, 4095)
 
-  #fills all 4096 values
-  for i in range(1,15):
-    memory_dict[i] = generateHexValue()
+    # fills all 4096 values
+    for i in range(0, 4095):
+        memory_dict[str(i)] = generateHexValue()
 
-  print(memory_dict)
-  
+    manosComputer = ManosComputer(memory_dict)
+    display = Display(manosComputer)
+    display.displayRegisters()
 
 if __name__=='__main__':
   main()
