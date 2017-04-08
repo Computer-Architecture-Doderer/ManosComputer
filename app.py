@@ -63,6 +63,28 @@ class NumConverter:
   def hexToInt(a):
     return int(a,16)
 
+
+# Class used to hold comp values and perform actions
+class ManosComputer:
+    regDict = {"AR": "",
+               "PC": "",
+               "DR": "",
+               "AC": "",
+               "IR": "",
+               "TR": "",
+               "E": "",
+               "M": ""
+               }
+
+
+# Class used to display the values of ManosComputer
+class Display:
+    manoComp = ManosComputer()
+
+    def __init__(self, manosComputer):
+        self.manoComp = manosComputer
+
+
 # Place program execution inside the main function
 def main():
   
